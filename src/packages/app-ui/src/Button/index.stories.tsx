@@ -5,7 +5,7 @@ import { Story, Meta } from '@storybook/react/types-6-0'
 import Button, { Props } from './index'
 
 const metaData: Meta = {
-  title: 'ui/Button',
+  title: 'app-ui/Button',
   component: Button,
 }
 

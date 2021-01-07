@@ -135,7 +135,7 @@
     "no-consecutive-blank-lines": true,
     "no-dynamic-delete": true,
     "no-return-await": true,
-    "no-submodule-imports": [true, "rxjs"],
+    "no-submodule-imports": [true, "rxjs", "@storybook"],
     "no-switch-case-fall-through": true,
     "no-trailing-whitespace": true,
     "no-unused-expression": [true, "allow-fast-null-checks"],
