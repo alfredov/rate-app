@@ -2,9 +2,10 @@
 import React from 'react'
 import t from 'format-message'
 import generate from 'format-message-generate-id'
-import { ThemeProvider as EmotionThemeProvider } from '@emotion/react'
+import { ThemeProvider as EmotionThemeProvider, Global } from '@emotion/react'
 
 import theme from '../../src/core/theme'
+import globalStyles from '../../src/core/screens/Site/index.styles'
 
 const setupTranslation = locale => t.setup({
   generateId: generate.underscored_crc32,
@@ -81,6 +82,7 @@ export const StoriesEnvironment = ({ children }) => {
   return (
     <StoriesContainer>
       <EmotionThemeProvider theme={theme}>
+        <Global styles={globalStyles.main} />
         {children}
       </EmotionThemeProvider>
     </StoriesContainer>
