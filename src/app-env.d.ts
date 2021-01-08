@@ -12,3 +12,4 @@ declare module 'format-message-generate-id' {
 }
 
 declare type TRoute = import('./core/schemas').TRoute
+declare type Theme =  typeof import('./core/theme').default

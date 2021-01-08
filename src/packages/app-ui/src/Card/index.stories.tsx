@@ -13,7 +13,7 @@ export const Primary = Template.bind({})
 
 Primary.args = {
   title: 'The Simpsons',
-  image: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/2IWouZK4gkgHhJa3oyYuSWfSqbG.jpg',
+  image: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/sWgBv7LV2PRoQgkxwlibdGXKz1S.jpg',
 }
 
 export default metaData

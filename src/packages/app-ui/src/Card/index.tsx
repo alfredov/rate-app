@@ -15,7 +15,7 @@ const Card: React.FC<Props> = ({ title, image, onClick }) => (
     <div css={styles.card} role="button" tabIndex={0} onClick={onClick}>
       <img css={styles.image} src={image} alt={title} />
     </div>
-    <h3>{title}</h3>
+    <h3 css={(theme: any) => styles.title(theme)}>{title}</h3>
   </article>
 )
 
