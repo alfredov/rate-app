@@ -28,7 +28,7 @@ export const wrapper = ({ selected, theme }: Params) => css`
     ${selected && borderBottom(theme)}
     justify-content: flex-start;
     width: 58px;
-    height: ${selected ? '33px' : '20px'};
+    height: 33px;
 
     > svg {
       display: none;

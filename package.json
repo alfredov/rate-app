@@ -4,7 +4,7 @@
   "main": "src/index",
   "license": "MIT",
   "scripts": {
-    "webpack-dev-server": "webpack-dev-server",
+    "webpack-dev-server": "webpack-dev-server --host 0.0.0.0",
     "webpack": "webpack",
     "debug": "node --inspect --inspect-brk ./node_modules/webpack/bin/webpack.js",
     "prod": "npm run webpack -- --env.mode production && npm run sh:copy-public-to-build",
