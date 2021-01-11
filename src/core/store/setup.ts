@@ -2,6 +2,7 @@
 import { History } from 'history'
 import { createEpicMiddleware } from 'redux-observable'
 import { createStore } from 'redux'
+import { ajax } from 'rxjs/ajax'
 
 import { createRootReducer, RootState } from './reducer'
 import { createRootEpic } from './epics'
@@ -13,7 +14,12 @@ export default (
   epics: any[],
   initialState?: RootState,
 ): ApplicationStore => {
-  const epicMiddleWare = createEpicMiddleware<any, any, any>()
+  const epicMiddleWare = createEpicMiddleware<
+    any,
+    any,
+    any
+  >({ dependencies: { getJSON: ajax.getJSON, ajax } })
+
   const enhancers = getEnhancers(history, epicMiddleWare)
 
   const store = createStore(

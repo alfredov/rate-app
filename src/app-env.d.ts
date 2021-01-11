@@ -21,4 +21,5 @@ declare namespace NodeJS {
 }
 
 declare type TRoute = import('./core/schemas').TRoute
+declare type TEpicDependencies = import('./core/schemas').TEpicDependencies
 declare type Theme =  typeof import('./core/theme').default
