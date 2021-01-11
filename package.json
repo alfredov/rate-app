@@ -80,6 +80,7 @@
   "dependencies": {
     "@emotion/react": "^11.1.4",
     "connected-react-router": "^6.8.0",
+    "dotenv": "^8.2.0",
     "format-message": "^6.2.3",
     "format-message-generate-id": "^6.2.3",
     "react": "16.13.1",

@@ -11,5 +11,14 @@ declare module 'format-message-generate-id' {
   export default generate;
 }
 
+declare namespace NodeJS {
+  interface ProcessEnv {
+    NODE_ENV: 'development' | 'production',
+    API_KEY: string,
+    API_URL: string,
+    HTTP_HOST: string,
+  }
+}
+
 declare type TRoute = import('./core/schemas').TRoute
 declare type Theme =  typeof import('./core/theme').default

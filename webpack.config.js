@@ -4,6 +4,7 @@ const { merge: webpackMerge } = require('webpack-merge')
 const modeConfig = env => require(`./tools/webpack.${env}`)(env)
 const presetConfig = require('./tools/loadPresets')
 const alias = require('./tools/loadAlias')
+const dotenv = require('dotenv').config({path: __dirname + '/.env'});
 
 module.exports = ({ mode, presets } = { mode: 'production', presets: [] }) => {
   return webpackMerge(
@@ -37,7 +38,10 @@ module.exports = ({ mode, presets } = { mode: 'production', presets: [] }) => {
       output: {
         filename: 'bundle.js',
       },
-      plugins: [new webpack.ProgressPlugin()]
+      plugins: [
+        new webpack.ProgressPlugin(),
+        new webpack.DefinePlugin({ 'process.env': JSON.stringify(dotenv.parsed) }),
+      ]
     },
     modeConfig(mode),
     presetConfig({ mode, presets })
