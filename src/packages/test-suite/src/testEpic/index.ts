@@ -9,11 +9,12 @@ export default (
   inputAction: AnyAction,
   state: {},
   callback: (actions: AnyAction[]) => void,
+  dependencies: {} = {},
 ) => {
   const actions = new Subject<AnyAction>();
   const actions$ = new ActionsObservable(actions);
   const state$ = new StateObservable(new Subject(), state);
-  epic(actions$, state$, {})
+  epic(actions$, state$, dependencies)
     .pipe(take(count), toArray())
     .subscribe(callback);
   actions.next(inputAction);

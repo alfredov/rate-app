@@ -1,5 +1,6 @@
 import { Epic, ofType } from 'redux-observable';
-import { mapTo } from 'rxjs/operators';
+import { mapTo, mergeMap, switchMap } from 'rxjs/operators';
+import { from, of } from 'rxjs'
 import { AnyAction } from 'redux';
 
 import testEpic from './index';
@@ -62,4 +63,40 @@ describe('test-suite::testEpic', () => {
       });
     });
   });
+
+  describe('Uses Dependencies and Action', () => {
+    it('Uses dependencies params', (done) => {
+      const inputAction: AnyAction = { type: 'FETCH_DATA' }
+      const expectedActions: AnyAction[] = [
+        { type: 'FETCH_DONE', payload: [1, 2, 3] },
+      ]
+
+      const dependencies = {
+        fetch: (_url: string) => Promise.resolve([1, 2, 3]),
+      }
+
+      const epic: Epic = (
+        action$,
+        _state,
+        { fetch },
+      ) => action$.pipe(
+        ofType(inputAction.type),
+        switchMap(() => from(fetch('')).pipe(
+          mergeMap(response => of({ type: 'FETCH_DONE', payload: response })),
+        )),
+      )
+
+      testEpic(
+        epic,
+        expectedActions.length,
+        inputAction,
+        {},
+        (actions) => {
+          expect(expectedActions).toStrictEqual(actions)
+          done()
+        },
+        dependencies,
+      )
+    })
+  })
 });
