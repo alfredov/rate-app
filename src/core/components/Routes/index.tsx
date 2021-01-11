@@ -26,10 +26,9 @@ const Routes: React.FC<Props> = ({ routes }) => (
                 path={route.path}
               />,
             )}
-
-            <Route component={NotFoundPage} />
           </Home>
         </Route>
+        <Route component={NotFoundPage} />
       </Switch>
     </Suspense>
   </Site>

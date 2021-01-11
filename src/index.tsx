@@ -6,10 +6,13 @@ import {
   epics as sampleEpics,
   registerReducer as sampleReducer,
 } from 'sample'
+
+import { routes as movieRoutes } from 'movie'
 import { App } from './core'
 
 const routes = [
   ...sampleRoutes,
+  ...movieRoutes,
 ]
 
 const epics = [
