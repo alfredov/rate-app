@@ -10,6 +10,7 @@ import {
 import {
   routes as movieRoutes,
   epics as movieEpics,
+  registerReducer as movieReducer,
 } from 'movie'
 import { App } from './core'
 
@@ -25,6 +26,7 @@ const epics = [
 
 const reducers = [
   sampleReducer,
+  movieReducer,
 ]
 
 const render = () => ReactDOM.render(

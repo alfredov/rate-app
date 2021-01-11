@@ -4,7 +4,7 @@ import { filter, switchMap, mergeMap, catchError, takeUntil } from 'rxjs/operato
 import { of, Observable } from 'rxjs'
 
 import { getUpcomingMovies as action } from '../actions'
-import { TGetUpcomingMoviesAction as TAction, TGetUpcomingResponse } from '../schemas'
+import { TGetUpcomingMoviesAction as TAction, TMovie } from '../schemas'
 import { PATH_IMAGES_500_BASE } from '../constants'
 
 type APIResponse = {
@@ -26,7 +26,7 @@ export default (
     (getJSON(`${url}&page=${payload.page}`) as Observable<APIResponse>)
       .pipe(
         mergeMap(({ results }) => {
-          const upcomingMovies: TGetUpcomingResponse[] = results.map(item => ({
+          const upcomingMovies: TMovie[] = results.map(item => ({
             posterPath: `${PATH_IMAGES_500_BASE}${item.poster_path}`,
             title: item.title,
           }))
