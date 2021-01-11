@@ -1,5 +1,30 @@
-import React from 'react'
+import React, { memo, useEffect } from 'react'
+import { connect } from 'react-redux'
 
-export const MovieScreen = () => <h1>Movies</h1>
+import { getUpcomingMovies } from '../../actions'
 
-export default MovieScreen
+type Props = {
+  cancel: () => void,
+  fetchUpcomingMovies: typeof getUpcomingMovies.request,
+}
+
+export const MovieScreen: React.FC<Props> = ({ fetchUpcomingMovies, cancel }) => {
+  useEffect(() => {
+    fetchUpcomingMovies({ page: 1 })
+  }, [])
+
+  return (
+    <section>
+      <h1>Movies🍿</h1>
+      <button onClick={() => fetchUpcomingMovies({ page: 1 })}>Upcoming movies</button>
+    </section>
+  )
+}
+
+export default connect(
+  null,
+  {
+    fetchUpcomingMovies: getUpcomingMovies.request,
+    cancel: getUpcomingMovies.cancel,
+  },
+)(memo(MovieScreen))

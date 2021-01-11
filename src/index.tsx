@@ -7,7 +7,10 @@ import {
   registerReducer as sampleReducer,
 } from 'sample'
 
-import { routes as movieRoutes } from 'movie'
+import {
+  routes as movieRoutes,
+  epics as movieEpics,
+} from 'movie'
 import { App } from './core'
 
 const routes = [
@@ -17,6 +20,7 @@ const routes = [
 
 const epics = [
   ...sampleEpics,
+  ...movieEpics,
 ]
 
 const reducers = [
