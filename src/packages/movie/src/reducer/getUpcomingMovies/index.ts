@@ -9,7 +9,7 @@ const { cancel, failure, request, success } = getUpcomingMovies
 
 const data = createReducer<TMovie[], TActions>([])
   .handleAction([failure, cancel], () => [])
-  .handleAction(success, (_state, action) => action.payload)
+  .handleAction(success, (state, action) => [...state, ...action.payload])
 
 const error = createReducer<TError | null, TActions>(null)
   .handleAction(failure, (_state, action) => action.payload)
