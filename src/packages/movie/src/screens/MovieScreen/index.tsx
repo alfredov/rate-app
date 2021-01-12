@@ -28,9 +28,8 @@ export const MovieScreen: React.FC<Props> = ({ fetchUpcomingMovies, loading, mov
 
   return (
     <section>
-      <h1>Movies🍿</h1>
-      {loading && <h3>Loading..</h3>}
       <CardPaginator
+        title={t('Upcoming')}
         fetchMoreTitle={loading ? t('loading') : t('more')}
         onPaginate={fetchMore}
       >

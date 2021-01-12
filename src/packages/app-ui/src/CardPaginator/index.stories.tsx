@@ -13,6 +13,7 @@ const Template: Story<Props> = props => <CardPaginator {...props} />
 export const Primary = Template.bind({})
 
 Primary.args = {
+  title: 'Movie',
   fetchMoreTitle: 'More',
   children: (
     <div>
