@@ -1,3 +1,5 @@
 export type { TGetUpcomingMoviesAction } from './TGetUpcomingMoviesAction'
 export type { TMovie } from './TMovie'
 export type { TError } from './TError'
+export type { TtopRatedMovie } from './TtopRatedMovie'
+export type { TGetTopRatedMoviesAction } from './TGetTopRatedMoviesAction'
