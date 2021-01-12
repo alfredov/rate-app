@@ -2,10 +2,12 @@ import { combineReducers } from 'redux'
 import { StateType } from 'typesafe-actions'
 
 import getUpcomingMovies from './getUpcomingMovies'
+import getTopRatedMovies from './getTopRatedMovies'
 import { REDUCER_INDEX } from '../constants'
 
 const movieReducer = combineReducers({
   getUpcomingMovies,
+  getTopRatedMovies,
 })
 
 export const registerReducer = (reducers: {}) => ({
