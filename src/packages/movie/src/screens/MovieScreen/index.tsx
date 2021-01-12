@@ -2,14 +2,14 @@
 import React, { memo, useEffect } from 'react'
 import { jsx } from '@emotion/react'
 import { connect } from 'react-redux'
+import t from 'format-message'
 
-import { Card } from 'app-ui'
+import { Card, CardPaginator } from 'app-ui'
 
 import { RootState } from '../../reducer'
 import { getUpcomingMovies as getUpcomingMoviesSelector } from '../../selectors'
 import { getUpcomingMovies } from '../../actions'
 import { TMovie } from '../../schemas'
-import styles from './index.styles'
 
 type Props = {
   loading: boolean,
@@ -24,15 +24,25 @@ export const MovieScreen: React.FC<Props> = ({ fetchUpcomingMovies, loading, mov
     return cancel
   }, [])
 
+  const fetchMore = (pageNumber: number) => fetchUpcomingMovies({ page: pageNumber })
+
   return (
     <section>
       <h1>Movies🍿</h1>
       {loading && <h3>Loading..</h3>}
-      <div css={styles.cardWrapper}>
+      <CardPaginator
+        fetchMoreTitle={loading ? t('loading') : t('more')}
+        onPaginate={fetchMore}
+      >
         {movies.map((movie, index) =>
-          <Card key={index} image={movie.posterPath} title={movie.title} onClick={() => null} />,
+          <Card
+            key={index}
+            image={movie.posterPath}
+            title={movie.title}
+            onClick={() => null}
+          />,
         )}
-      </div>
+      </CardPaginator>
     </section>
   )
 }

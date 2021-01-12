@@ -16,7 +16,7 @@ const CardPaginator: React.FC<Props> = ({ children, onPaginate, fetchMoreTitle }
   const [page, setPage] = useState(1)
   const pageHandler = () => {
     setPage(page + 1)
-    onPaginate(page)
+    onPaginate(page + 1)
   }
 
   return (
