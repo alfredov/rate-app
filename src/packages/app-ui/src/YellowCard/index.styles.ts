@@ -11,7 +11,7 @@ export const card = (theme: Theme) => css`
   font-weight: 500;
   text-transform: uppercase;
   height: 210px;
-  width: 140px;
+  min-width: 140px;
 
   &:hover {
     cursor: pointer;
