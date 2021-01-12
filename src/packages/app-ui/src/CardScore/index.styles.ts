@@ -5,7 +5,7 @@ export const card = css`
   display: grid;
   grid-template-columns: 10px 8fr 2fr 30px 10px;
   grid-template-rows: 10px 30px 8fr 2fr 10px;
-  max-width: 140px;
+  min-width: 140px;
   max-height: 210px;
   &:hover {
     cursor: pointer;
