@@ -82,7 +82,7 @@ export const StoriesEnvironment = ({ children }) => {
   return (
     <StoriesContainer>
       <EmotionThemeProvider theme={theme}>
-        <Global styles={globalStyles.main} />
+        <Global styles={globalStyles.global} />
         {children}
       </EmotionThemeProvider>
     </StoriesContainer>
