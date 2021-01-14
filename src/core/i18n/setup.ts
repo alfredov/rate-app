@@ -1,7 +1,7 @@
 import t from 'format-message'
 import generate from 'format-message-generate-id'
 
-import getLocale from './getLocale'
+import { getLocale } from 'app-utils'
 
 const locale = getLocale(navigator)
 
