@@ -1,5 +1,11 @@
 import React from 'react'
 
-const TvScreen = () => <h1>Tv Screen</h1>
+import PopularSeries from './PopularSeries'
+
+const TvScreen = () => (
+  <div>
+    <PopularSeries />
+  </div>
+)
 
 export default TvScreen
