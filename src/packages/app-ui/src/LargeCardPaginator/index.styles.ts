@@ -2,6 +2,8 @@ import { css } from '@emotion/react'
 
 const wrapper = css`
   display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
 `
 
 export const title = (theme: Theme) => css`
