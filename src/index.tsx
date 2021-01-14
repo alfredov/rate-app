@@ -12,11 +12,15 @@ import {
   epics as movieEpics,
   registerReducer as movieReducer,
 } from 'movie'
+
+import { routes as tvRoutes } from 'tv'
+
 import { App } from './core'
 
 const routes = [
   ...sampleRoutes,
   ...movieRoutes,
+  ...tvRoutes,
 ]
 
 const epics = [
