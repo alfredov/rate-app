@@ -2,6 +2,7 @@ import { ActionsObservable } from 'redux-observable'
 import { isActionOf } from 'typesafe-actions'
 import { filter, switchMap, mergeMap } from 'rxjs/operators'
 import { Observable, of } from 'rxjs'
+import { getLocale } from 'app-utils'
 
 import { TGetPopularSeriesAction as TAction } from '../../schemas'
 import { getPopularSeries as action } from '../../actions'
@@ -15,7 +16,8 @@ type APIResponse = {
   }[],
 }
 
-const url = `${process.env.API_URL}/tv/popular?api_key=${process.env.API_KEY}&language=en`
+const locale = getLocale(navigator)
+const url = `${process.env.API_URL}/tv/popular?api_key=${process.env.API_KEY}&language=${locale}`
 
 export default (
   action$: ActionsObservable<TAction>,

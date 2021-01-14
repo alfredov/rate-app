@@ -2,6 +2,7 @@ import { ActionsObservable } from 'redux-observable'
 import { isActionOf } from 'typesafe-actions'
 import { filter, switchMap, mergeMap, catchError, takeUntil } from 'rxjs/operators'
 import { of, Observable } from 'rxjs'
+import { getLocale } from 'app-utils'
 
 import { getTopRatedMovies as action } from '../../actions'
 import { TGetTopRatedMoviesAction as TAction, TtopRatedMovie } from '../../schemas'
@@ -16,7 +17,8 @@ type APIResponse = {
   }[],
 }
 
-const url = `${process.env.API_URL}/movie/top_rated?api_key=${process.env.API_KEY}&language=en`
+const locale = getLocale(navigator)
+const url = `${process.env.API_URL}/movie/top_rated?api_key=${process.env.API_KEY}&language=${locale}`
 
 export default (
   action$: ActionsObservable<TAction>,
