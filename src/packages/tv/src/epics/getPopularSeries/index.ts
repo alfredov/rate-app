@@ -9,7 +9,7 @@ import { PATH_IMAGES_500_BASE } from '../../constants'
 
 type APIResponse = {
   results: {
-    backdrop_path: string,
+    poster_path: string,
     name: string,
     vote_average: number,
   }[],
@@ -29,7 +29,7 @@ export default (
         mergeMap(({ results }) => of(action.success(
           results.map(item => ({
             title: item.name,
-            posterPath: `${PATH_IMAGES_500_BASE}/${item.backdrop_path}`,
+            posterPath: `${PATH_IMAGES_500_BASE}/${item.poster_path}`,
             score: item.vote_average,
           })),
         ))),
