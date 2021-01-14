@@ -13,7 +13,7 @@ import {
   registerReducer as movieReducer,
 } from 'movie'
 
-import { routes as tvRoutes } from 'tv'
+import { routes as tvRoutes, epics as tvEpics } from 'tv'
 
 import { App } from './core'
 
@@ -26,6 +26,7 @@ const routes = [
 const epics = [
   ...sampleEpics,
   ...movieEpics,
+  ...tvEpics,
 ]
 
 const reducers = [
