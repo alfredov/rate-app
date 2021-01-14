@@ -1,5 +1,26 @@
 {
   "hello_everybody_e6b69598": {
     "message": "Hola mundo"
+  },
+  "loading_725811ca": {
+    "message": "cargando"
+  },
+  "more_6fae695f": {
+    "message": "más"
+  },
+  "movies_5ae3362a": {
+    "message": "Películas"
+  },
+  "popular_44306aeb": {
+    "message": "Popular"
+  },
+  "top_rated_4a245716": {
+    "message": "Más rankeados"
+  },
+  "tv_352bc329": {
+    "message": "Tv"
+  },
+  "upcoming_e1ff3db4": {
+    "message": "Próximos"
   }
 }
