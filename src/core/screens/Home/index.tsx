@@ -7,6 +7,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { NavItem } from 'app-ui'
 import { PATH_BASE as MOVIE_PATH_BASE } from 'movie'
 import { PATH_BASE as TV_PATH_BASE } from 'tv'
+import t from 'format-message'
 
 import styles from './index.styles'
 
@@ -24,7 +25,7 @@ export const Home: React.FC = ({ children }) => {
             icon="movie"
             selected={pathname === MOVIE_PATH_BASE}
           >
-            Movies
+            {t('Movies')}
           </NavItem>
         </Link>
         <Link to={TV_PATH_BASE}>
@@ -32,7 +33,7 @@ export const Home: React.FC = ({ children }) => {
             icon="tv"
             selected={pathname === TV_PATH_BASE}
           >
-            Tv
+            {t('Tv')}
           </NavItem>
         </Link>
       </footer>
