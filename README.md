@@ -1,6 +1,8 @@
 # 🍿 Rating movie and tv series App
 API Data are coming from [themoviedb](https://www.themoviedb.org)
 
+👉 [Click here to check Live Demo](https://alfredov.github.io/rate-app/) 👈
+
 ## This project has support to
 - [x] Typescript
 - [x] i18n translation, with `en` by default
